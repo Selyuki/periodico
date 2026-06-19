@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Heraldo Digital</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- TIPOGRAFÍAS --- */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        h1, h2, h3, .navbar-brand {
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        /* --- COLORES PERSONALIZADOS --- */
+        .bg-dark-newspaper {
+            background-color: #1d2d44 !important; /* Azul Oscuro Institucional */
+        }
+        .text-nota-roja {
+            color: #d90429 !important; /* Rojo Alerta */
+        }
+        .bg-nota-roja {
+            background-color: #d90429 !important;
+        }
+
+        /* --- MOVIMIENTOS / EFECTOS --- */
+        /* Efecto 1: Zoom suave en imágenes al pasar el cursor */
+        .zoom-img-container {
+            overflow: hidden;
+        }
+        .zoom-img-container img {
+            transition: transform 0.4s ease;
+        }
+        .zoom-img-container :hover img {
+            transform: scale(1.06);
+        }
+
+        /* Efecto 2: Marquesina de texto continuo (Breaking News) */
+        .ticker-wrapper {
+            background: #d90429;
+            color: white;
+            padding: 6px 0;
+            overflow: hidden;
+        }
+        .ticker-text {
+            display: inline-block;
+            white-space: nowrap;
+            padding-left: 100%;
+            animation: marquee 25s linear infinite;
+            font-weight: bold;
+        }
+        @keyframes marquee {
+            0% { transform: translate3d(0, 0, 0); }
+            100% { transform: translate3d(-100%, 0, 0); }
+        }
+
+        /* Detalles estéticos de periódico */
+        .card {
+            border: none;
+            border-bottom: 3px solid #dee2e6;
+            border-radius: 0;
+            margin-bottom: 1.5rem;
+        }
+        .section-title {
+            border-bottom: 4px solid #1d2d44;
+            padding-bottom: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            font-size: 1.5rem;
+        }
+        .section-title.roja {
+            border-bottom-color: #d90429;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ticker-wrapper">
+        <div class="ticker-text">
+            ⚠️ ÚLTIMA HORA: Se registran fuertes lluvias en el centro de la ciudad // Mercado de fichajes: Gran estrella europea analiza ofertas // Premios del Cine: Todo listo para la alfombra roja de esta noche.
+        </div>
+    </div>
+
+    <header class="py-4 bg-white border-bottom shadow-sm">
+        <div class="container text-center">
+            <h1 class="display-3 text-uppercase my-0">EL HERALDO DIGITAL</h1>
+            <p class="text-muted small my-1">Verdad e Información Completa | México, 2026</p>
+        </div>
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark-newspaper sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="text" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#futbol">Fútbol</a></li>
+                    <li class="nav-item"><a class="nav-link text-warning fw-bold" href="#nota-roja">Nota Roja</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#espectaculos">Espectáculos</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+
+        <section id="futbol" class="mb-5">
+            <h2 class="section-title text-primary">⚽ Fútbol</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" class="card-img-top" alt="Futbol">
+                        <div class="card-body px-0">
+                            <span class="badge bg-primary mb-2">Liga Local</span>
+                            <h3 class="card-title h4"><a href="#" class="text-decoration-none text-dark">¡Remontada Épica! Victoria agónica en el último minuto</a></h3>
+                            <p class="card-text text-muted">Con un gol de volea en el minuto 94, el equipo local rescata los tres puntos y mantiene vivo el sueño del campeonato en un estadio completamente lleno.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <div class="card d-flex flex-row align-items-center border-0 pb-3 zoom-img-container">
+                                <div style="width: 140px; height: 100px;" class="flex-shrink-0 overflow-hidden me-3">
+                                    <img src="https://images.unsplash.com/photo-1544698310-74ea9d1c8258?auto=format&fit=crop&w=300&q=80" class="w-100 h-100 object-fit-cover" alt="Entrenamiento">
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary mb-1">Selección</span>
+                                    <h4 class="h6 mb-1"><a href="#" class="text-decoration-none text-dark">Nuevo director técnico inicia concentración oficial</a></h4>
+                                    <p class="small text-muted mb-0">El estratega presentó su lista de convocados sin sorpresas mayores.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="card d-flex flex-row align-items-center border-0 pb-3 zoom-img-container">
+                                <div style="width: 140px; height: 100px;" class="flex-shrink-0 overflow-hidden me-3">
+                                    <img src="https://images.unsplash.com/photo-1518063319789-7217e6706b04?auto=format&fit=crop&w=300&q=80" class="w-100 h-100 object-fit-cover" alt="Estadio">
+                                </div>
+                                <div>
+                                    <span class="badge bg-primary mb-1">Internacional</span>
+                                    <h4 class="h6 mb-1"><a href="#" class="text-decoration-none text-dark">Preparan millonaria oferta por el delantero del momento</a></h4>
+                                    <p class="small text-muted mb-0">Clubes de la liga inglesa se disputan la firma de la joven promesa.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <section id="nota-roja" class="mb-5">
+            <h2 class="section-title roja text-nota-roja">🚨 Nota Roja</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Bomberos">
+                        <div class="card-body px-0">
+                            <h3 class="card-title h5 text-danger">Feroz incendio consume bodega comercial en el centro</h3>
+                            <p class="card-text small text-muted">Cuerpos de emergencia laboraron durante más de cuatro horas para sofocar las llamas. No se reportan pérdidas humanas, sólo daños materiales.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Patrulla">
+                        <div class="card-body px-0">
+                            <h3 class="card-title h5 text-danger">Operativo nocturno logra la captura de banda de robo de vehículos</h3>
+                            <p class="card-text small text-muted">Elementos de seguridad interceptaron a tres sospechosos en flagrancia tras una persecución en la autopista principal.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1516216628859-9bccecab13ca?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Accidente">
+                        <div class="card-body px-0">
+                            <h3 class="card-title h5 text-danger">Volcadura de transporte pesado provoca caos vial</h3>
+                            <p class="card-text small text-muted">El incidente bloqueó dos carriles principales durante la mañana. Las autoridades desvían el tráfico hacia rutas alternas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="my-5">
+
+        <section id="espectaculos" class="mb-5">
+            <h2 class="section-title text-purple" style="border-bottom-color: #6f42c1;">🎬 Espectáculos</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Concierto">
+                        <div class="card-body px-0">
+                            <span class="text-uppercase small fw-bold text-muted">Música</span>
+                            <h3 class="card-title h5 mt-1"><a href="#" class="text-decoration-none text-dark">Estrella pop anuncia gira mundial y confirma tres fechas en el país</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Cine">
+                        <div class="card-body px-0">
+                            <span class="text-uppercase small fw-bold text-muted">Cine</span>
+                            <h3 class="card-title h5 mt-1"><a href="#" class="text-decoration-none text-dark">Cineasta galardonado revela el primer vistazo de su próxima película</a></h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card zoom-img-container">
+                        <img src="https://images.unsplash.com/photo-1496337589254-7e19d01eae44?auto=format&fit=crop&w=500&q=80" class="card-img-top" alt="Moda">
+                        <div class="card-body px-0">
+                            <span class="text-uppercase small fw-bold text-muted">Moda & Tendencias</span>
+                            <h3 class="card-title h5 mt-1"><a href="#" class="text-decoration-none text-dark">Diseñadores deslumbran con apuestas futuristas en la semana de la moda</a></h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0 small">&copy; 2026 El Heraldo Digital. Todos los derechos reservados.</p>
+            <p class="text-muted small">Diseñado con Bootstrap 5</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/dist/js/getbootstrap.bundle.min.js"></script>
+</body>
+</html>
